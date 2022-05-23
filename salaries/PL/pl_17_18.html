@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="table" data-filter-control="true" data-pagination="true" data-pagination-v-align="both"
+        data-pagination-parts="['pageSize', 'pageList']" data-pagination-pre-text="Previous"
+        data-pagination-next-text="Next" data-page-list="[5, 10, 15, 20, 25, All]" data-page-size="All"
+        data-search="true" data-search-accent-neutralise="true" data-show-footer="true"
+        data-sort-name="annual_gross_gbp" data-sort-order="desc" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="text-align: left; " colspan="1" data-field="0">
+                    <div class="th-inner "></div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: left; " colspan="2">
+                    <div class="th-inner ">Combined Payroll</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: left; " colspan="1">
+                    <div class="th-inner ">Inflation (2022)</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: left; " colspan="4">
+                    <div class="th-inner ">By Position</div>
+                    <div class="fht-cell"></div>
+                </th>
+            </tr>
+            <tr>
+                <th class="name-column" style="" data-field="club" data-not-first-th="">
+                    <div class="th-inner sortable both">Club</div>
+                    <div class="fht-cell">
+                        <div class="filter-control"><input type="search"
+                                class="form-control bootstrap-table-filter-control-club search-input"
+                                style="width: 100%;" placeholder="Search" value=""></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="weekly_gross_gbp">
+                    <div class="th-inner sortable both">Weekly Gross<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="annual_gross_gbp">
+                    <div class="th-inner sortable both desc">Annual Gross<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="adj_gross_gbp">
+                    <div class="th-inner sortable both">Adj. Gross<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="k_gross_gbp">
+                    <div class="th-inner sortable both">Keeper<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="d_gross_gbp">
+                    <div class="th-inner sortable both">Defense<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="m_gross_gbp">
+                    <div class="th-inner sortable both">Midfield<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+                <th class="money-column" style="" data-field="f_gross_gbp">
+                    <div class="th-inner sortable both">Forward<br>(IN GBP, 000's)</div>
+                    <div class="fht-cell">
+                        <div class="no-filter-control"></div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-index="0" style="">
+                <td class="name-column"><a class="firstcol" href="/club/manchester-united/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/manchester-united.svg" class="table-logo" height="20"
+                            width="20" loading="lazy">Manchester United</a></td>
+                <td class="money-column">£ 3,196</td>
+                <td class="money-column">£ 166,171</td>
+                <td class="money-column">£ 170,732</td>
+                <td class="money-column">£ 14,820</td>
+                <td class="money-column">£ 47,580</td>
+                <td class="money-column">£ 50,731</td>
+                <td class="money-column">£ 53,040</td>
+            </tr>
+            <tr data-index="1" style="">
+                <td class="name-column"><a class="firstcol" href="/club/arsenal/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/arsenal.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Arsenal</a></td>
+                <td class="money-column">£ 3,043</td>
+                <td class="money-column">£ 158,256</td>
+                <td class="money-column">£ 162,600</td>
+                <td class="money-column">£ 8,528</td>
+                <td class="money-column">£ 32,968</td>
+                <td class="money-column">£ 59,348</td>
+                <td class="money-column">£ 57,412</td>
+            </tr>
+            <tr data-index="2" style="">
+                <td class="name-column"><a class="firstcol" href="/club/manchester-city/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/manchester-city.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Manchester City</a></td>
+                <td class="money-column">£ 2,913</td>
+                <td class="money-column">£ 151,498</td>
+                <td class="money-column">£ 155,656</td>
+                <td class="money-column">£ 16,214</td>
+                <td class="money-column">£ 52,104</td>
+                <td class="money-column">£ 51,851</td>
+                <td class="money-column">£ 31,329</td>
+            </tr>
+            <tr data-index="3" style="">
+                <td class="name-column"><a class="firstcol" href="/club/chelsea/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/chelsea.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Chelsea</a></td>
+                <td class="money-column">£ 2,340</td>
+                <td class="money-column">£ 121,662</td>
+                <td class="money-column">£ 125,001</td>
+                <td class="money-column">£ 8,762</td>
+                <td class="money-column">£ 36,683</td>
+                <td class="money-column">£ 32,170</td>
+                <td class="money-column">£ 44,047</td>
+            </tr>
+            <tr data-index="4" style="">
+                <td class="name-column"><a class="firstcol" href="/club/liverpool/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/liverpool.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Liverpool</a></td>
+                <td class="money-column">£ 1,840</td>
+                <td class="money-column">£ 95,673</td>
+                <td class="money-column">£ 98,299</td>
+                <td class="money-column">£ 8,164</td>
+                <td class="money-column">£ 27,600</td>
+                <td class="money-column">£ 30,945</td>
+                <td class="money-column">£ 28,964</td>
+            </tr>
+            <tr data-index="5" style="">
+                <td class="name-column"><a class="firstcol" href="/club/everton/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/everton.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Everton</a></td>
+                <td class="money-column">£ 1,643</td>
+                <td class="money-column">£ 85,440</td>
+                <td class="money-column">£ 87,785</td>
+                <td class="money-column">£ 5,767</td>
+                <td class="money-column">£ 29,260</td>
+                <td class="money-column">£ 22,219</td>
+                <td class="money-column">£ 28,194</td>
+            </tr>
+            <tr data-index="6" style="">
+                <td class="name-column"><a class="firstcol" href="/club/tottenham/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/tottenham.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Tottenham</a></td>
+                <td class="money-column">£ 1,544</td>
+                <td class="money-column">£ 80,298</td>
+                <td class="money-column">£ 82,502</td>
+                <td class="money-column">£ 8,351</td>
+                <td class="money-column">£ 28,452</td>
+                <td class="money-column">£ 21,585</td>
+                <td class="money-column">£ 21,910</td>
+            </tr>
+            <tr data-index="7" style="">
+                <td class="name-column"><a class="firstcol" href="/club/west-ham/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/west-ham.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">West Ham</a></td>
+                <td class="money-column">£ 1,337</td>
+                <td class="money-column">£ 69,533</td>
+                <td class="money-column">£ 71,442</td>
+                <td class="money-column">£ 8,655</td>
+                <td class="money-column">£ 22,014</td>
+                <td class="money-column">£ 19,377</td>
+                <td class="money-column">£ 19,487</td>
+            </tr>
+            <tr data-index="8">
+                <td class="name-column"><a class="firstcol" href="/club/southampton/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/southampton.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Southampton</a></td>
+                <td class="money-column">£ 1,309</td>
+                <td class="money-column">£ 68,073</td>
+                <td class="money-column">£ 69,941</td>
+                <td class="money-column">£ 5,980</td>
+                <td class="money-column">£ 25,272</td>
+                <td class="money-column">£ 12,220</td>
+                <td class="money-column">£ 24,601</td>
+            </tr>
+            <tr data-index="9">
+                <td class="name-column"><a class="firstcol" href="/club/crystal-palace/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/crystal-palace.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Crystal Palace</a></td>
+                <td class="money-column">£ 1,308</td>
+                <td class="money-column">£ 68,041</td>
+                <td class="money-column">£ 69,909</td>
+                <td class="money-column">£ 3,380</td>
+                <td class="money-column">£ 24,440</td>
+                <td class="money-column">£ 19,910</td>
+                <td class="money-column">£ 20,311</td>
+            </tr>
+            <tr data-index="10">
+                <td class="name-column"><a class="firstcol" href="/club/leicester/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/leicester.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Leicester</a></td>
+                <td class="money-column">£ 1,233</td>
+                <td class="money-column">£ 64,107</td>
+                <td class="money-column">£ 65,867</td>
+                <td class="money-column">£ 5,980</td>
+                <td class="money-column">£ 18,009</td>
+                <td class="money-column">£ 16,302</td>
+                <td class="money-column">£ 23,816</td>
+            </tr>
+            <tr data-index="11">
+                <td class="name-column"><a class="firstcol" href="/club/west-bromwich/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/west-bromwich.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">West Bromwich</a></td>
+                <td class="money-column">£ 1,136</td>
+                <td class="money-column">£ 59,054</td>
+                <td class="money-column">£ 60,675</td>
+                <td class="money-column">£ 4,550</td>
+                <td class="money-column">£ 13,028</td>
+                <td class="money-column">£ 20,281</td>
+                <td class="money-column">£ 21,195</td>
+            </tr>
+            <tr data-index="12">
+                <td class="name-column"><a class="firstcol" href="/club/stoke-city/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/stoke-city.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Stoke City</a></td>
+                <td class="money-column">£ 943</td>
+                <td class="money-column">£ 49,052</td>
+                <td class="money-column">£ 50,398</td>
+                <td class="money-column">£ 3,900</td>
+                <td class="money-column">£ 16,588</td>
+                <td class="money-column">£ 12,512</td>
+                <td class="money-column">£ 16,052</td>
+            </tr>
+            <tr data-index="13">
+                <td class="name-column"><a class="firstcol" href="/club/swansea/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/swansea.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Swansea</a></td>
+                <td class="money-column">£ 919</td>
+                <td class="money-column">£ 47,773</td>
+                <td class="money-column">£ 49,084</td>
+                <td class="money-column">£ 4,940</td>
+                <td class="money-column">£ 11,024</td>
+                <td class="money-column">£ 12,231</td>
+                <td class="money-column">£ 19,578</td>
+            </tr>
+            <tr data-index="14">
+                <td class="name-column"><a class="firstcol" href="/club/watford/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/watford.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Watford</a></td>
+                <td class="money-column">£ 894</td>
+                <td class="money-column">£ 46,476</td>
+                <td class="money-column">£ 47,752</td>
+                <td class="money-column">£ 2,941</td>
+                <td class="money-column">£ 13,804</td>
+                <td class="money-column">£ 10,335</td>
+                <td class="money-column">£ 19,396</td>
+            </tr>
+            <tr data-index="15">
+                <td class="name-column"><a class="firstcol" href="/club/bournemouth/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/bournemouth.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Bournemouth</a></td>
+                <td class="money-column">£ 828</td>
+                <td class="money-column">£ 43,061</td>
+                <td class="money-column">£ 44,243</td>
+                <td class="money-column">£ 7,280</td>
+                <td class="money-column">£ 12,844</td>
+                <td class="money-column">£ 8,117</td>
+                <td class="money-column">£ 14,820</td>
+            </tr>
+            <tr data-index="16">
+                <td class="name-column"><a class="firstcol" href="/club/newcastle/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/newcastle.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Newcastle</a></td>
+                <td class="money-column">£ 812</td>
+                <td class="money-column">£ 42,219</td>
+                <td class="money-column">£ 43,378</td>
+                <td class="money-column">£ 2,959</td>
+                <td class="money-column">£ 13,156</td>
+                <td class="money-column">£ 12,584</td>
+                <td class="money-column">£ 13,520</td>
+            </tr>
+            <tr data-index="17">
+                <td class="name-column"><a class="firstcol" href="/club/brighton/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/brighton.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Brighton</a></td>
+                <td class="money-column">£ 767</td>
+                <td class="money-column">£ 39,909</td>
+                <td class="money-column">£ 41,004</td>
+                <td class="money-column">£ 4,690</td>
+                <td class="money-column">£ 12,954</td>
+                <td class="money-column">£ 9,490</td>
+                <td class="money-column">£ 12,775</td>
+            </tr>
+            <tr data-index="18">
+                <td class="name-column"><a class="firstcol" href="/club/burnley/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/burnley.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Burnley</a></td>
+                <td class="money-column">£ 626</td>
+                <td class="money-column">£ 32,557</td>
+                <td class="money-column">£ 33,451</td>
+                <td class="money-column">£ 3,510</td>
+                <td class="money-column">£ 8,944</td>
+                <td class="money-column">£ 11,414</td>
+                <td class="money-column">£ 8,689</td>
+            </tr>
+            <tr data-index="19">
+                <td class="name-column"><a class="firstcol" href="/club/huddersfield/salaries/2017-2018/"><img
+                            src="/static/images/logos/uk/huddersfield.svg" class="table-logo" height="20" width="20"
+                            loading="lazy">Huddersfield</a></td>
+                <td class="money-column">£ 492</td>
+                <td class="money-column">£ 25,607</td>
+                <td class="money-column">£ 26,310</td>
+                <td class="money-column">£ 1,241</td>
+                <td class="money-column">£ 5,953</td>
+                <td class="money-column">£ 9,152</td>
+                <td class="money-column">£ 9,261</td>
+            </tr>
+        </tbody>
+        <tfoot style="margin-right: 0px;">
+            <tr>
+                <th class="name-column" style="">
+                    <div class="th-inner">Total</div>
+                    <div class="fht-cell" style="width: 149px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 29,123</div>
+                    <div class="fht-cell" style="width: 99.075px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 1,514,460</div>
+                    <div class="fht-cell" style="width: 100.925px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 1,556,029</div>
+                    <div class="fht-cell" style="width: 93.75px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 130,612</div>
+                    <div class="fht-cell" style="width: 93.75px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 452,677</div>
+                    <div class="fht-cell" style="width: 93.75px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 442,774</div>
+                    <div class="fht-cell" style="width: 93.75px;"></div>
+                </th>
+                <th class="money-column" style="">
+                    <div class="th-inner">£ 488,397</div>
+                    <div class="fht-cell" style="width: 93.75px;"></div>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
