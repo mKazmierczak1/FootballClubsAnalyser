@@ -1,5 +1,6 @@
 import pandas as pd 
 import requests
+import unidecode
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -24,8 +25,15 @@ clubs = {}
 def getClubKey(club_name: str):
    global clubs
 
+   parts_of_name = club_name.split(" ")
+   acronym = ""
+
+   for name in parts_of_name:
+      acronym += name[0].capitalize()
+
    for key in clubs.keys():
-      if club_name in key:
+      key_in_ASCII = unidecode.unidecode(key)
+      if club_name in key_in_ASCII or parts_of_name[0] in key_in_ASCII or acronym in key_in_ASCII:
          return key
 
    return "No key found!"
