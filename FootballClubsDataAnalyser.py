@@ -1,49 +1,56 @@
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
-import FootballClubsDataScraper as scraper
+import FootballClubsDataMapper
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+import statistics
 
-#scraper.load_and_store_data_about_clubs_form_web(13, 22)
-df = pd.read_csv('clubs_data.csv')
-
-print(df.columns)
-
-
-Expenses = df['Expenses'].to_list()[1:]
-for i in range(1, 9):
-    Expenses.extend(df['Expenses.' + str(i)].to_list()[1:])
-
-Y = []
-print(len(Expenses))
-for i in range(0, Expenses.count('-')):
-    Expenses.remove('-')
-
-Expenses.pop()
-Expenses.pop()
-Expenses.pop()
-
-for y in Expenses:
-    Y.append(int(y))
-
-Positions = df['League positions'].to_list()[1:]
-for i in range(1, 9):
-    Positions.extend(df['League positions.' + str(i)].to_list()[1:])
-print(len(Positions))
-X = []
-
-for i in range(0, Positions.count('-')):
-    Positions.remove('-')
-
-for x in Positions:
-    X.append(int(x))
+Positions = FootballClubsDataMapper.getClubsPositions()
+Expenses = FootballClubsDataMapper.getClubbsExpenses()
+average_Y = FootballClubsDataMapper.getAverageExpensesPerPosition()
+median_Y = FootballClubsDataMapper.getMedianExpensesPerPosition()
 
 # model_lin = LinearRegression()
 # model_lin.fit(np.reshape(X, (-1,1)), Y)
-# Y_pred = model_lin.predict(np.reshape(X, (-1,1)))
 
-plt.figure(figsize=(20,20))
-sns.scatterplot(x=Positions, y=Y)
-# plt.plot(X, Y_pred, color="tab:orange")
+
+p = FootballClubsDataMapper.getEveryPossiblePosition()
+
+model = RandomForestRegressor(n_estimators=100, max_features=2)
+model.fit(np.reshape(p, (-1,1)), average_Y)
+Y_pred = model.predict(np.reshape(p, (-1,1)))
+
+model.fit(np.reshape(p, (-1,1)), median_Y)
+Y_pred2 = model.predict(np.reshape(p, (-1,1)))
+
+print(Y_pred2[10])
+
+plt.figure(figsize=(10,5))
+sns.scatterplot(x=p, y=average_Y, label="average")
+sns.scatterplot(x=p, y=median_Y, color='green', label="median")
+# sns.scatterplot(x=A, y=Positions, color='black')
+plt.plot(p, Y_pred, color="tab:orange", label="average model")
+plt.plot(p, Y_pred2, color="tab:purple", label ="median model")
+
+# xdata = np.asarray(X)
+# ydata = np.asarray(Y)
+
+# def Gauss(x, A, B):
+#     y = A*np.exp(-1*B*x**2)
+#     return y
+
+# parameters, covariance = curve_fit(Gauss, xdata, ydata)
+
+# fit_A = parameters[0]
+# fit_B = parameters[1]
+
+# fit_y = Gauss(xdata, fit_A, fit_B)
+# plt.plot(xdata, ydata, 'o', label='data')
+# plt.plot(xdata, fit_y, '-', label='fit')
+
+plt.xlabel("Position")
+plt.ylabel("Expenses")
+plt.legend()
 plt.show()
