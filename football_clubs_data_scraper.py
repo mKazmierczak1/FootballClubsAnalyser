@@ -13,8 +13,8 @@ leagues_url = 'https://www.worldfootball.net/schedule/$-20#-20*-spieltag/%/'
 salaries_url = 'https://www.capology.com/$/payrolls/20#-20*/'
 transfers_url = 'https://www.capology.com/$/transfer-recap/20#-20*/'
 
-leagues = [('fra-ligue-1', '38', 'fr/ligue-1')] #('eng-premier-league', '38', 'uk/premier-league'), ('bundesliga', '34', 'de/1-bundesliga'), ('esp-primera-division', '38', 'es/la-liga'), 
-#('ita-serie-a', '38', 'it/serie-a'), ]
+leagues = [('eng-premier-league', '38', 'uk/premier-league'), ('bundesliga', '34', 'de/1-bundesliga'), ('esp-primera-division', '38', 'es/la-liga'), 
+('ita-serie-a', '38', 'it/serie-a'), ('fra-ligue-1', '38', 'fr/ligue-1')]
 
 leagues_urls = []
 salaries_urls = []
@@ -231,8 +231,8 @@ def create_dataframe_from_clubs_data(year_from, year_to):
     return df
 
 def store_data(df: pd.DataFrame):
-    df.to_csv("fr_clubs_data.csv")
-    df.to_excel("fr_clubs_data.xlsx")
+    df.to_csv("clubs_data.csv")
+    df.to_excel("clubs_data.xlsx")
 
 # load every data form web and store it as .csv and .xlsx files
 def load_and_store_data_about_clubs_form_web(year_from, year_to):
