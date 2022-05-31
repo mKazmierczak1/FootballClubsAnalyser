@@ -1,10 +1,15 @@
 import numpy as np
 import pandas as pd
 import statistics
-#import FootballClubsDataScraper as scraper
+import FootballClubsDataScraper as scraper
+from os.path import exists
 
-#scraper.load_and_store_data_about_clubs_form_web(13, 22)
-df = pd.read_csv('clubs_data.csv')
+file_name = 'fr_clubs_data.csv'
+
+if not exists(file_name):
+    scraper.load_and_store_data_about_clubs_form_web(13, 22)
+
+df = pd.read_csv(file_name)
 
 Expenses = df['Expenses'].to_list()[1:]
 for i in range(1, 9):
